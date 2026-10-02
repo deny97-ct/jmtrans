@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konsep Logo JM Trans</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#12304f; --green:#2fa84f; --amber:#f5a623; --blue:#1f6fd1; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Plus Jakarta Sans",system-ui,sans-serif; background:#f6f7f9; color:var(--ink); }
+  .wrap { width:min(1100px,100% - 32px); margin:0 auto; padding:40px 0 80px; }
+  h1 { font-family:Outfit; font-weight:800; font-size:clamp(1.8rem,4vw,2.6rem); margin:0 0 .3em; }
+  .intro { color:var(--muted); max-width:720px; margin:0 0 2.5rem; line-height:1.6; }
+  .palette { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:2.5rem; }
+  .sw { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 14px 6px 6px; font-size:.85rem; font-weight:600; }
+  .sw i { width:26px; height:26px; border-radius:50%; display:block; }
+
+  .concept { background:#fff; border:1px solid var(--line); border-radius:20px; padding:28px; margin-bottom:28px; position:relative; }
+  .concept.rec { border:2px solid var(--green); box-shadow:0 20px 40px -24px rgba(47,168,79,.5); }
+  .badge { position:absolute; top:-13px; left:24px; background:var(--green); color:#fff; font-size:.75rem; font-weight:700; padding:4px 12px; border-radius:999px; letter-spacing:.04em; }
+  .concept h2 { font-family:Outfit; font-weight:800; margin:0 0 .2em; font-size:1.6rem; }
+  .concept .idea { color:var(--muted); line-height:1.6; margin:0 0 1.4rem; max-width:760px; }
+  .concept .idea b { color:var(--ink); }
+
+  .show { display:grid; grid-template-columns: 220px 1fr; gap:16px; }
+  .tile { border-radius:14px; border:1px solid var(--line); display:grid; place-items:center; padding:20px; min-height:140px; }
+  .tile--mark { grid-row: span 2; }
+  .tile--mark svg { width:160px; height:160px; }
+  .tile--dark { background:var(--navy); border-color:var(--navy); }
+  .row3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px; grid-column: 1 / -1; }
+  .lockup { display:flex; align-items:center; gap:14px; }
+  .lockup svg { width:64px; height:64px; flex:none; }
+  .wm { line-height:1; }
+  .wm b { font-family:Outfit; font-weight:900; font-size:2.1rem; letter-spacing:.01em; color:var(--navy); display:block; }
+  .wm b span { color:var(--green); }
+  .wm small { display:block; margin-top:6px; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .tile--dark .wm b { color:#fff; }
+  .tile--dark .wm small { color:rgba(255,255,255,.65); }
+  .avatar { width:110px; height:110px; border-radius:50%; display:grid; place-items:center; }
+  .avatar svg { width:72px; height:72px; }
+  .cap { font-size:.72rem; color:var(--muted); margin-top:8px; text-align:center; }
+  .favs { display:flex; align-items:flex-end; gap:14px; }
+  .favs svg { display:block; }
+  .tilebox { display:flex; flex-direction:column; align-items:center; }
+
+  .verdict { background:var(--navy); color:#fff; border-radius:20px; padding:28px; }
+  .verdict h2 { font-family:Outfit; margin:0 0 .5em; }
+  .verdict li { margin-bottom:.5em; line-height:1.55; }
+  .verdict b { color:var(--amber); }
+
+  @media (max-width:760px) {
+    .show { grid-template-columns:1fr; }
+    .tile--mark { grid-row:auto; }
+    .row3 { grid-template-columns:1fr; }
+    .wm b { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SIMBOL LOGO ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- KONSEP 1: Rumah ke Rumah -->
+    <symbol id="m1" viewBox="0 0 120 120">
+      <path d="M6 99 C34 84 62 104 114 86" fill="none" stroke="#2fa84f" stroke-width="12" stroke-linecap="round"/>
+      <path d="M14 95 C38 85 62 102 106 89" fill="none" stroke="#fff" stroke-width="2.4" stroke-dasharray="6 5"/>
+      <path d="M15 76 V50 L38 27 L60 49 L82 27 L105 50 V76" fill="none" stroke="#12304f" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="31" y="52" width="14" height="22" rx="2.5" fill="#f5a623"/>
+      <rect x="75" y="52" width="14" height="22" rx="2.5" fill="#f5a623"/>
+    </symbol>
+    <!-- versi untuk latar gelap -->
+    <symbol id="m1d" viewBox="0 0 120 120">
+      <path d="M6 99 C34 84 62 104 114 86" fill="none" stroke="#2fa84f" stroke-width="12" stroke-linecap="round"/>
+      <path d="M14 95 C38 85 62 102 106 89" fill="none" stroke="#12304f" stroke-width="2.4" stroke-dasharray="6 5"/>
+      <path d="M15 76 V50 L38 27 L60 49 L82 27 L105 50 V76" fill="none" stroke="#fff" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+      <rect x="31" y="52" width="14" height="22" rx="2.5" fill="#f5a623"/>
+      <rect x="75" y="52" width="14" height="22" rx="2.5" fill="#f5a623"/>
+    </symbol>
+
+    <!-- KONSEP 2: Dua Arah -->
+    <symbol id="m2" viewBox="0 0 120 120">
+      <g>
+        <path d="M18.6 67.3 A42 42 0 0 1 92.2 33" fill="none" stroke="#2fa84f" stroke-width="10"/>
+        <polygon points="101,43 100,25 84,39" fill="#2fa84f"/>
+      </g>
+      <g transform="rotate(180 60 60)">
+        <path d="M18.6 67.3 A42 42 0 0 1 92.2 33" fill="none" stroke="#1f6fd1" stroke-width="10"/>
+        <polygon points="101,43 100,25 84,39" fill="#1f6fd1"/>
+      </g>
+      <text x="60" y="72" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="34" fill="#12304f">JM</text>
+    </symbol>
+    <symbol id="m2d" viewBox="0 0 120 120">
+      <path d="M18.6 67.3 A42 42 0 0 1 92.2 33" fill="none" stroke="#2fa84f" stroke-width="10"/>
+      <polygon points="101,43 100,25 84,39" fill="#2fa84f"/>
+      <g transform="rotate(180 60 60)">
+        <path d="M18.6 67.3 A42 42 0 0 1 92.2 33" fill="none" stroke="#4d9bff" stroke-width="10"/>
+        <polygon points="101,43 100,25 84,39" fill="#4d9bff"/>
+      </g>
+      <text x="60" y="72" text-anchor="middle" font-family="Outfit" font-weight="900" font-size="34" fill="#fff">JM</text>
+    </symbol>
+
+    <!-- KONSEP 3: Pin Perjalanan -->
+    <clipPath id="disc"><circle cx="60" cy="47" r="26"/></clipPath>
+    <symbol id="m3" viewBox="0 0 120 120">
+      <path d="M60 110 C48 96 22 72 22 47 A38 38 0 0 1 98 47 C98 72 72 96 60 110Z" fill="#12304f"/>
+      <circle cx="60" cy="47" r="26" fill="#f5a623"/>
+      <g clip-path="url(#disc)">
+        <rect x="30" y="52" width="60" height="30" fill="#2fa84f"/>
+        <polygon points="40,76 80,76 62,50 58,50" fill="#12304f"/>
+        <path d="M60 74 V52" stroke="#fff" stroke-width="2.4" stroke-dasharray="5 4"/>
+      </g>
+      <circle cx="74" cy="36" r="5" fill="#fff" opacity=".9"/>
+    </symbol>
+    <symbol id="m3d" viewBox="0 0 120 120">
+      <path d="M60 110 C48 96 22 72 22 47 A38 38 0 0 1 98 47 C98 72 72 96 60 110Z" fill="#fff"/>
+      <circle cx="60" cy="47" r="26" fill="#f5a623"/>
+      <g clip-path="url(#disc)">
+        <rect x="30" y="52" width="60" height="30" fill="#2fa84f"/>
+        <polygon points="40,76 80,76 62,50 58,50" fill="#12304f"/>
+        <path d="M60 74 V52" stroke="#fff" stroke-width="2.4" stroke-dasharray="5 4"/>
+      </g>
+      <circle cx="74" cy="36" r="5" fill="#fff" opacity=".9"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <h1>Konsep Logo Baru JM Trans</h1>
+  <p class="intro">Tiga arah desain dari nol. Semua berangkat dari inti bisnis JM Trans: <b>dijemput di rumah, diantar sampai rumah</b>, dua arah Majalengka ⇄ Jabodetabek. Warna hijau dipertahankan sebagai benang merah dari logo lama, ditambah navy (kepercayaan, perjalanan malam) dan kuning amber (lampu rumah / lampu kendaraan).</p>
+
+  <div class="palette">
+    <span class="sw"><i style="background:#12304f"></i>Navy #12304F</span>
+    <span class="sw"><i style="background:#2fa84f"></i>Hijau #2FA84F</span>
+    <span class="sw"><i style="background:#f5a623"></i>Amber #F5A623</span>
+    <span class="sw"><i style="background:#1f6fd1"></i>Biru #1F6FD1 (konsep 2)</span>
+  </div>
+
+  <!-- KONSEP 1 -->
+  <section class="concept rec">
+    <span class="badge">REKOMENDASI</span>
+    <h2>1 · Rumah ke Rumah</h2>
+    <p class="idea">Huruf <b>M</b> dibentuk dari <b>dua atap rumah</b>: rumah asal dan rumah tujuan. Dua pintu kuning menyala adalah <b>“door to door”</b> secara harfiah. Keduanya berdiri di atas <b>jalan hijau</b> bermarka putus-putus yang berkelok, yaitu perjalanan yang menghubungkan pintu ke pintu. Satu simbol menceritakan seluruh layanan tanpa perlu dijelaskan.</p>
+    <div class="show">
+      <div class="tile tile--mark"><svg><use href="#m1"/></svg></div>
+      <div class="tile"><div class="lockup"><svg><use href="#m1"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Door to Door Travel</small></div></div></div>
+      <div class="tile tile--dark"><div class="lockup"><svg><use href="#m1d"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Majalengka ⇄ Jabodetabek</small></div></div></div>
+      <div class="row3">
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:#fff;border:1px solid var(--line)"><svg><use href="#m1"/></svg></div><div class="cap">Foto profil WhatsApp</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:var(--navy)"><svg><use href="#m1d"/></svg></div><div class="cap">Profil (versi gelap)</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="favs"><svg width="64" height="64"><use href="#m1"/></svg><svg width="32" height="32"><use href="#m1"/></svg><svg width="16" height="16"><use href="#m1"/></svg></div><div class="cap">Uji ukuran kecil (64 / 32 / 16 px)</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONSEP 2 -->
+  <section class="concept">
+    <h2>2 · Dua Arah</h2>
+    <p class="idea">Dua panah melingkar yang saling mengejar: <b>hijau</b> berangkat dari Majalengka, <b>biru</b> pulang dari Jabodetabek. Lingkarannya mengingatkan pada <b>roda</b> dan cincin hijau logo lama, jadi pelanggan lama tetap merasa akrab. Paling aman dan mudah dikenali, tapi kurang unik karena panah melingkar banyak dipakai brand lain.</p>
+    <div class="show">
+      <div class="tile tile--mark"><svg><use href="#m2"/></svg></div>
+      <div class="tile"><div class="lockup"><svg><use href="#m2"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Door to Door Travel</small></div></div></div>
+      <div class="tile tile--dark"><div class="lockup"><svg><use href="#m2d"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Majalengka ⇄ Jabodetabek</small></div></div></div>
+      <div class="row3">
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:#fff;border:1px solid var(--line)"><svg><use href="#m2"/></svg></div><div class="cap">Foto profil WhatsApp</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:var(--navy)"><svg><use href="#m2d"/></svg></div><div class="cap">Profil (versi gelap)</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="favs"><svg width="64" height="64"><use href="#m2"/></svg><svg width="32" height="32"><use href="#m2"/></svg><svg width="16" height="16"><use href="#m2"/></svg></div><div class="cap">Uji ukuran kecil (64 / 32 / 16 px)</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONSEP 3 -->
+  <section class="concept">
+    <h2>3 · Pin Perjalanan</h2>
+    <p class="idea">Penanda lokasi (<b>pin peta</b>) yang berarti “kami datang ke titik Anda”. Di dalamnya ada <b>jalan menuju cakrawala</b> saat matahari terbenam, sesuai jadwal berangkat sore dan malam. Paling “bercerita” dan cocok untuk stiker mobil, tapi detail jalannya mulai hilang di ukuran sangat kecil.</p>
+    <div class="show">
+      <div class="tile tile--mark"><svg><use href="#m3"/></svg></div>
+      <div class="tile"><div class="lockup"><svg><use href="#m3"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Door to Door Travel</small></div></div></div>
+      <div class="tile tile--dark"><div class="lockup"><svg><use href="#m3d"/></svg><div class="wm"><b>JM <span>TRANS</span></b><small>Majalengka ⇄ Jabodetabek</small></div></div></div>
+      <div class="row3">
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:#fff;border:1px solid var(--line)"><svg><use href="#m3"/></svg></div><div class="cap">Foto profil WhatsApp</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="avatar" style="background:var(--navy)"><svg><use href="#m3d"/></svg></div><div class="cap">Profil (versi gelap)</div></div></div>
+        <div class="tile"><div class="tilebox"><div class="favs"><svg width="64" height="64"><use href="#m3"/></svg><svg width="32" height="32"><use href="#m3"/></svg><svg width="16" height="16"><use href="#m3"/></svg></div><div class="cap">Uji ukuran kecil (64 / 32 / 16 px)</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="verdict">
+    <h2>Kenapa saya pilih Konsep 1</h2>
+    <ul>
+      <li><b>Menjual layanan dalam satu lirikan.</b> Orang melihat dua rumah yang terhubung jalan dan langsung paham “dijemput dari rumah, diantar ke rumah”. Hal ini yang membedakan JM Trans dari travel pool-ke-pool.</li>
+      <li><b>Inisial tetap ada:</b> dua atap membentuk huruf M, jadi simbolnya tetap terhubung ke nama brand.</li>
+      <li><b>Tahan di semua ukuran:</b> garis tebal dan bentuknya sederhana, jadi tetap jelas di foto profil WhatsApp, favicon, stiker kaca, maupun spanduk.</li>
+      <li><b>Mudah dibuat produksi:</b> hanya 3 warna solid, bisa dicetak sablon, cutting sticker, atau bordir seragam sopir.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

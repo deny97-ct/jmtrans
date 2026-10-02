@@ -3,17 +3,17 @@
    Warna diambil dari logo: hijau, biru, merah, kuning
    ========================================================= */
 :root {
-  --green: #5bb33a;
-  --green-dark: #3f8f24;
+  --green: #2fa84f;
+  --green-dark: #23863d;
   --blue: #1f6fd1;
   --red: #d62b23;
-  --yellow: #f4b400;
-  --ink: #111827;
-  --ink-2: #1f2937;
+  --yellow: #f5a623;
+  --ink: #12304f;
+  --ink-2: #1c3d60;
   --text: #374151;
   --muted: #6b7280;
   --line: #e5e7eb;
-  --soft: #f4f7f2;
+  --soft: #f3f6f9;
   --white: #fff;
   --radius: 16px;
   --shadow: 0 10px 30px -12px rgba(17, 24, 39, .25);
@@ -66,9 +66,10 @@ p { margin: 0 0 1em; }
 .header.is-scrolled { border-color: var(--line); box-shadow: 0 4px 20px -12px rgba(0,0,0,.2); }
 .header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
-.brand__mark { width: 44px; height: 44px; }
+.brand__mark { width: 52px; height: 40px; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand__text strong { color: var(--ink); font-size: 1.25rem; font-weight: 800; letter-spacing: .02em; }
+.brand__text strong { font-family: "Outfit", sans-serif; color: var(--ink); font-size: 1.4rem; font-weight: 900; letter-spacing: .01em; }
+.brand__text strong span { color: var(--green); }
 .brand__text small { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
 
 .nav { display: flex; align-items: center; gap: 1.4rem; }
@@ -87,7 +88,7 @@ p { margin: 0 0 1em; }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(100deg, rgba(10,15,25,.92) 0%, rgba(10,15,25,.75) 45%, rgba(10,15,25,.15) 100%),
+    linear-gradient(100deg, rgba(10,26,45,.92) 0%, rgba(10,26,45,.75) 45%, rgba(10,26,45,.15) 100%),
     url("../img/luxio-hero.jpg") center 60% / cover no-repeat;
 }
 .hero__inner { padding-block: 4rem 5rem; }
@@ -96,8 +97,8 @@ p { margin: 0 0 1em; }
 .hl { background: linear-gradient(90deg, var(--yellow), #ffd66b); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .lead { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 560px; }
 .pill { display: inline-flex; align-items: center; gap: .5em; padding: .35em .9em; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); font-size: .85rem; font-weight: 600; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(91,179,58,.3); animation: pulse 2s infinite; }
-@keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(91,179,58,0); } }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(47,168,79,.3); animation: pulse 2s infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(47,168,79,0); } }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.8rem 0 2.4rem; }
 .hero__stats { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0; }
 .hero__stats li { padding: 0 1.6rem; border-left: 1px solid rgba(255,255,255,.25); }
@@ -192,7 +193,7 @@ p { margin: 0 0 1em; }
   transition: border-color .2s, box-shadow .2s;
 }
 .field textarea { resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(91,179,58,.15); background: var(--white); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(47,168,79,.15); background: var(--white); }
 .field .is-invalid { border-color: var(--red); }
 .form__toggle { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; background: var(--soft); padding: .35rem; border-radius: 12px; }
 .form__toggle legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -223,10 +224,10 @@ p { margin: 0 0 1em; }
 .cta p { margin: 0; color: rgba(255,255,255,.9); }
 
 /* ---------- Footer ---------- */
-.footer { background: #0b0f17; color: rgba(255,255,255,.7); padding-top: 4rem; }
+.footer { background: #0c2138; color: rgba(255,255,255,.7); padding-top: 4rem; }
 .footer h3 { color: var(--white); font-size: 1rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1.2rem; }
 .footer__grid { display: grid; grid-template-columns: 1.1fr 1fr 1.2fr; gap: 2.5rem; padding-bottom: 3rem; }
-.footer__logo { border-radius: 12px; background: var(--white); padding: 6px; width: 200px; height: auto; margin-bottom: 1rem; }
+.footer__logo { width: 240px; height: auto; margin-bottom: 1.2rem; }
 .footer p { font-size: .93rem; }
 .contact { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
 .contact li { display: flex; gap: .8rem; align-items: flex-start; font-size: .95rem; }
@@ -289,7 +290,7 @@ p { margin: 0 0 1em; }
 
 @media (max-width: 560px) {
   .brand__text small { display: none; }
-  .hero__bg { background: linear-gradient(180deg, rgba(10,15,25,.7), rgba(10,15,25,.92)), url("../img/luxio-hero.jpg") center / cover no-repeat; }
+  .hero__bg { background: linear-gradient(180deg, rgba(10,26,45,.7), rgba(10,26,45,.92)), url("../img/luxio-hero.jpg") center / cover no-repeat; }
   .hero__inner { padding-block: 3rem 5rem; }
   .hero__actions .btn { flex: 1 1 100%; }
   .hero__stats li { padding: 0 1rem; }
