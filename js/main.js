@@ -53,7 +53,7 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lightbo
 // ===== Formulir pemesanan → WhatsApp =====
 const form = document.getElementById("pesan");
 const errorBox = document.getElementById("formError");
-const arahField = form.querySelector('[data-only="Travel Reguler"]');
+const conditionalFields = form.querySelectorAll("[data-only]");
 const jumlahLabel = form.querySelector("[data-label-reguler]");
 
 // Tanggal minimal = hari ini
@@ -65,8 +65,9 @@ dateInput.value = toISO(today);
 
 // Ganti tampilan form sesuai layanan
 const syncLayanan = () => {
-  const reguler = form.elements.layanan.value === "Travel Reguler";
-  arahField.hidden = !reguler;
+  const layanan = form.elements.layanan.value;
+  const reguler = layanan === "Travel Reguler";
+  conditionalFields.forEach((el) => { el.hidden = el.dataset.only !== layanan; });
   jumlahLabel.textContent = reguler ? jumlahLabel.dataset.labelReguler : jumlahLabel.dataset.labelCarter;
 };
 form.querySelectorAll('input[name="layanan"]').forEach((r) => r.addEventListener("change", syncLayanan));
@@ -96,11 +97,14 @@ form.addEventListener("submit", (e) => {
   errorBox.hidden = true;
 
   const reguler = f.layanan.value === "Travel Reguler";
+  const bandara = f.layanan.value === "Antar-Jemput Bandara";
   const baris = [
     "Halo JM Trans, saya mau pesan:",
     "",
     `*Layanan:* ${f.layanan.value}`,
     reguler ? `*Arah:* ${f.arah.value}` : null,
+    bandara ? `*Bandara:* ${f.bandara.value} — ${f.arahBandara.value}` : null,
+    bandara && f.penerbangan.value.trim() ? `*Penerbangan:* ${f.penerbangan.value.trim()}` : null,
     `*Tanggal:* ${formatTanggal(f.tanggal.value)}`,
     `*${reguler ? "Jumlah kursi" : "Jumlah penumpang"}:* ${f.jumlah.value}`,
     `*Nama:* ${f.nama.value.trim()}`,

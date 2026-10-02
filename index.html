@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JM Trans — Travel Majalengka Jabodetabek Door to Door</title>
-  <meta name="description" content="JM Trans (Jaya Mandiri Transportation) — travel reguler Majalengka ⇄ Jabodetabek, dijemput dan diantar sampai depan rumah. Berangkat setiap hari. Pesan via WhatsApp 0812-9182-8887.">
+  <meta name="description" content="JM Trans (Jaya Mandiri Transportation) — travel reguler Majalengka ⇄ Jabodetabek, dijemput dan diantar sampai depan rumah. Berangkat setiap hari. Juga antar-jemput Bandara Soekarno-Hatta & Kertajati. Pesan via WhatsApp 0812-9182-8887.">
   <meta name="theme-color" content="#111827">
   <meta property="og:title" content="JM Trans — Travel Door to Door Majalengka ⇄ Jabodetabek">
   <meta property="og:description" content="Dijemput di rumah, diantar sampai tujuan. Berangkat setiap hari dari Majalengka jam 16.00 dan dari Jabodetabek jam 23.00.">
@@ -141,11 +141,24 @@
             <div class="service__body">
               <span class="tag tag--blue">Rombongan</span>
               <h3>Carter / Sewa Mobil + Sopir</h3>
-              <p>Untuk keluarga, kantor, atau komunitas: mudik, ziarah, wisata, kondangan, antar-jemput bandara Kertajati, dan acara lainnya. Jadwal & rute bebas sesuai kebutuhan.</p>
+              <p>Untuk keluarga, kantor, atau komunitas: mudik, ziarah, wisata, kondangan, dan acara lainnya. Jadwal & rute bebas sesuai kebutuhan.</p>
               <ul class="checks">
                 <li>Pilihan armada 7–19 kursi</li>
                 <li>Termasuk sopir</li>
                 <li>Rute & jadwal fleksibel</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service">
+            <img src="img/hiace-putih.jpg" alt="Armada HiAce JM Trans siap antar-jemput bandara" loading="lazy">
+            <div class="service__body">
+              <span class="tag tag--red">Bandara</span>
+              <h3>Antar-Jemput Bandara</h3>
+              <p>Dijemput di rumah lalu diantar ke bandara, atau dijemput di bandara lalu diantar sampai rumah. Melayani <strong>Bandara Soekarno-Hatta (CGK)</strong> dan <strong>Bandara Kertajati (BIJB)</strong>.</p>
+              <ul class="checks">
+                <li>Soekarno-Hatta, Tangerang</li>
+                <li>Kertajati, Majalengka</li>
+                <li>Sesuai jam penerbangan</li>
               </ul>
             </div>
           </article>
@@ -195,6 +208,12 @@
               <li>Jakarta</li><li>Bogor</li><li>Depok</li><li>Tangerang</li><li>Bekasi</li>
             </ul>
           </div>
+        </div>
+        <div class="area area--airport">
+          <h3>Bandara</h3>
+          <ul class="chips">
+            <li>✈ Soekarno-Hatta (CGK)</li><li>✈ Kertajati (BIJB)</li>
+          </ul>
         </div>
         <p class="note">Alamat Anda di luar daftar? <a href="https://wa.me/6281291828887?text=Halo%20JM%20Trans%2C%20apakah%20alamat%20saya%20bisa%20dijemput%3F" target="_blank" rel="noopener">Tanyakan via WhatsApp</a> — biasanya tetap bisa kami layani.</p>
       </div>
@@ -277,7 +296,29 @@
             <legend>Layanan</legend>
             <label><input type="radio" name="layanan" value="Travel Reguler" checked> <span>Travel Reguler</span></label>
             <label><input type="radio" name="layanan" value="Carter / Sewa Mobil"> <span>Carter / Sewa</span></label>
+            <label><input type="radio" name="layanan" value="Antar-Jemput Bandara"> <span>Bandara</span></label>
           </fieldset>
+
+          <div class="form__row" data-only="Antar-Jemput Bandara">
+            <label class="field">
+              <span>Bandara</span>
+              <select name="bandara">
+                <option value="Soekarno-Hatta (CGK)">Soekarno-Hatta (CGK)</option>
+                <option value="Kertajati (BIJB)">Kertajati (BIJB)</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Keperluan</span>
+              <select name="arahBandara">
+                <option value="Antar ke bandara">Antar ke bandara</option>
+                <option value="Jemput dari bandara">Jemput dari bandara</option>
+              </select>
+            </label>
+          </div>
+          <label class="field" data-only="Antar-Jemput Bandara">
+            <span>Jam & nomor penerbangan <em>(opsional)</em></span>
+            <input type="text" name="penerbangan" placeholder="cth. GA 123, take off 09.30">
+          </label>
 
           <div class="form__row">
             <label class="field">
@@ -357,8 +398,8 @@
             <p>Boleh. Mohon tulis jumlah dan ukuran barang di kolom catatan supaya kami bisa menyiapkan tempat bagasi.</p>
           </details>
           <details>
-            <summary>Bisa jemput di bandara Kertajati?</summary>
-            <p>Bisa. Kertajati (BIJB) termasuk area layanan kami, baik untuk travel reguler maupun carter.</p>
+            <summary>Bisa antar-jemput ke bandara Soekarno-Hatta atau Kertajati?</summary>
+            <p>Bisa. Kami melayani antar ke bandara maupun jemput dari bandara Soekarno-Hatta (CGK) dan Kertajati (BIJB), langsung dari/ke alamat rumah Anda. Pilih “Bandara” di formulir dan cantumkan jam penerbangan agar jam jemput bisa disesuaikan.</p>
           </details>
           <details>
             <summary>Bagaimana cara pembayarannya?</summary>
@@ -385,7 +426,7 @@
     <div class="container footer__grid">
       <div>
         <img src="img/logo.jpg" alt="Logo JM Trans" class="footer__logo" width="200" height="113">
-        <p>Jaya Mandiri Transportation melayani travel reguler door to door Majalengka ⇄ Jabodetabek serta sewa mobil dan carter rombongan.</p>
+        <p>Jaya Mandiri Transportation melayani travel reguler door to door Majalengka ⇄ Jabodetabek, antar-jemput Bandara Soekarno-Hatta & Kertajati, serta sewa mobil dan carter rombongan.</p>
       </div>
       <div>
         <h3>Kontak</h3>
