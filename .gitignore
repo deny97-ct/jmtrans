@@ -1,0 +1,7 @@
+# Foto mentah dari WhatsApp (salinan rapi ada di img/)
+WhatsApp Image *.jpeg
+logo.jpeg
+logo1.jpeg
+
+# Konfigurasi lokal
+.claude/
