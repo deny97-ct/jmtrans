@@ -1,0 +1,3 @@
+# Blokir akses ke folder git dan file konfigurasi
+RewriteEngine On
+RewriteRule (^|/)\.(git|claude|gitignore) - [F,L]
