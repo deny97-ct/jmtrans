@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JM Trans — Travel Majalengka Jabodetabek Door to Door</title>
-  <meta name="description" content="JM Trans (Jaya Mandiri Transportation) — travel reguler Majalengka ⇄ Jabodetabek, dijemput dan diantar sampai depan rumah. Berangkat setiap hari. Juga antar-jemput Bandara Soekarno-Hatta & Kertajati. Pesan via WhatsApp 0812-9182-8887.">
+  <meta name="description" content="JM Trans (Jaya Mandiri Transportation) — travel reguler Majalengka ⇄ Jabodetabek, dijemput dan diantar sampai depan rumah. Berangkat setiap hari. Juga antar-jemput Bandara Soekarno-Hatta & Kertajati serta kirim paket dan dokumen. Pesan via WhatsApp 0812-9182-8887.">
   <meta name="theme-color" content="#12304f">
   <meta property="og:title" content="JM Trans — Travel Door to Door Majalengka ⇄ Jabodetabek">
   <meta property="og:description" content="Dijemput di rumah, diantar sampai tujuan. Berangkat setiap hari dari Majalengka jam 16.00 dan dari Jabodetabek jam 23.00.">
@@ -156,6 +156,19 @@
               </ul>
             </div>
           </article>
+          <article class="service">
+            <img src="img/pool-armada.jpg" alt="Armada JM Trans yang juga membawa kiriman paket" loading="lazy">
+            <div class="service__body">
+              <span class="tag tag--amber">Paket</span>
+              <h3>Kirim Paket & Dokumen</h3>
+              <p>Kami juga menerima antar-jemput paket ringan seperti dokumen, berkas penting, oleh-oleh, dan barang kecil lainnya. Paket diambil di alamat pengirim dan diantar langsung ke alamat penerima, ikut jadwal keberangkatan harian.</p>
+              <ul class="checks">
+                <li>Diambil & diantar ke alamat</li>
+                <li>Berangkat di hari yang sama</li>
+                <li>Dokumen & paket ringan</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -291,6 +304,7 @@
             <label><input type="radio" name="layanan" value="Travel Reguler" checked> <span>Travel Reguler</span></label>
             <label><input type="radio" name="layanan" value="Carter / Sewa Mobil"> <span>Carter / Sewa</span></label>
             <label><input type="radio" name="layanan" value="Antar-Jemput Bandara"> <span>Bandara</span></label>
+            <label><input type="radio" name="layanan" value="Kirim Paket"> <span>Paket</span></label>
           </fieldset>
 
           <div class="form__row" data-only="Antar-Jemput Bandara">
@@ -325,7 +339,7 @@
             </label>
           </div>
 
-          <label class="field" data-only="Travel Reguler">
+          <label class="field" data-only="Travel Reguler|Kirim Paket">
             <span>Arah perjalanan</span>
             <select name="arah">
               <option value="Majalengka → Jabodetabek (16.00)">Majalengka → Jabodetabek (16.00)</option>
@@ -339,17 +353,22 @@
               <input type="date" name="tanggal" required>
             </label>
             <label class="field">
-              <span data-label-reguler="Jumlah kursi" data-label-carter="Jumlah penumpang">Jumlah kursi</span>
+              <span id="jumlahLabel">Jumlah kursi</span>
               <input type="number" name="jumlah" min="1" max="19" value="1" required>
             </label>
           </div>
 
+          <label class="field" data-only="Kirim Paket">
+            <span>Isi paket</span>
+            <input type="text" name="isiPaket" placeholder="cth. dokumen, 1 dus oleh-oleh ± 3 kg">
+          </label>
+
           <label class="field">
-            <span>Alamat penjemputan</span>
+            <span id="jemputLabel">Alamat penjemputan</span>
             <textarea name="jemput" rows="2" required placeholder="Nama jalan, RT/RW, desa, kecamatan, patokan"></textarea>
           </label>
           <label class="field">
-            <span>Alamat tujuan</span>
+            <span id="tujuanLabel">Alamat tujuan</span>
             <textarea name="tujuan" rows="2" required placeholder="Alamat lengkap tujuan"></textarea>
           </label>
           <label class="field">
@@ -392,6 +411,10 @@
             <p>Boleh. Mohon tulis jumlah dan ukuran barang di kolom catatan supaya kami bisa menyiapkan tempat bagasi.</p>
           </details>
           <details>
+            <summary>Apakah bisa mengirim paket atau dokumen saja, tanpa ikut berangkat?</summary>
+            <p>Bisa. Kami menerima kiriman paket ringan seperti dokumen, berkas, dan barang kecil. Paket diambil di alamat pengirim lalu diantar ke alamat penerima mengikuti jadwal keberangkatan. Pilih “Paket” di formulir dan tuliskan isi paketnya; ongkos kirim akan diinformasikan oleh admin.</p>
+          </details>
+          <details>
             <summary>Bisa antar-jemput ke bandara Soekarno-Hatta atau Kertajati?</summary>
             <p>Bisa. Kami melayani antar ke bandara maupun jemput dari bandara Soekarno-Hatta (CGK) dan Kertajati (BIJB), langsung dari/ke alamat rumah Anda. Pilih “Bandara” di formulir dan cantumkan jam penerbangan agar jam jemput bisa disesuaikan.</p>
           </details>
@@ -420,7 +443,7 @@
     <div class="container footer__grid">
       <div>
         <img src="img/logo-jmtrans-putih.svg" alt="JM Trans — Door to Door Travel" class="footer__logo" width="240" height="57">
-        <p>Jaya Mandiri Transportation melayani travel reguler door to door Majalengka ⇄ Jabodetabek, antar-jemput Bandara Soekarno-Hatta & Kertajati, serta sewa mobil dan carter rombongan.</p>
+        <p>Jaya Mandiri Transportation melayani travel reguler door to door Majalengka ⇄ Jabodetabek, antar-jemput Bandara Soekarno-Hatta & Kertajati, kirim paket & dokumen, serta sewa mobil dan carter rombongan.</p>
       </div>
       <div>
         <h3>Kontak</h3>

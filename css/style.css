@@ -124,7 +124,7 @@ p { margin: 0 0 1em; }
 .section--dark .eyebrow { color: var(--yellow); }
 
 /* ---------- Services ---------- */
-.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 .service { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); display: flex; flex-direction: column; }
 .service img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
 .service__body { padding: 1.6rem; }
@@ -132,6 +132,7 @@ p { margin: 0 0 1em; }
 .tag--green { background: #e7f5e1; color: var(--green-dark); }
 .tag--blue { background: #e3edfb; color: var(--blue); }
 .tag--red { background: #fbe5e4; color: var(--red); }
+.tag--amber { background: #fdf0d8; color: #a86a00; }
 .checks { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
 .checks li { position: relative; padding-left: 1.5em; font-weight: 600; font-size: .92rem; color: var(--ink-2); }
 .checks li::before { content: ""; position: absolute; left: 0; top: .3em; width: 1em; height: 1em; border-radius: 50%; background: var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5 7 11l5-6' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/80% no-repeat; }
@@ -195,7 +196,7 @@ p { margin: 0 0 1em; }
 .field textarea { resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 4px rgba(47,168,79,.15); background: var(--white); }
 .field .is-invalid { border-color: var(--red); }
-.form__toggle { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; background: var(--soft); padding: .35rem; border-radius: 12px; }
+.form__toggle { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; background: var(--soft); padding: .35rem; border-radius: 12px; }
 .form__toggle legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .form__toggle label { position: relative; cursor: pointer; }
 .form__toggle input { position: absolute; opacity: 0; }
@@ -263,11 +264,14 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .services { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 1000px) {
   .features__grid { grid-template-columns: repeat(2, 1fr); }
   .fleet { grid-template-columns: repeat(2, 1fr); }
   .services { grid-template-columns: repeat(2, 1fr); }
-  .services .service:last-child { grid-column: 1 / -1; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__map { grid-column: 1 / -1; }
 }
@@ -285,7 +289,6 @@ p { margin: 0 0 1em; }
   .nav a:not(.btn) { padding: .85rem 0; border-bottom: 1px solid var(--line); }
   .nav__cta { margin-top: 1rem; }
   .services, .routes, .booking, .areas { grid-template-columns: 1fr; }
-  .services .service:last-child { grid-column: auto; }
 }
 
 @media (max-width: 560px) {
@@ -298,6 +301,7 @@ p { margin: 0 0 1em; }
   .features__grid, .fleet { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .form__row { grid-template-columns: 1fr; }
+  .form__toggle { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: 1fr; }
   .cta__inner .btn { width: 100%; }
   .route__time { font-size: 2.3rem; }

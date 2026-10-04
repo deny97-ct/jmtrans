@@ -54,7 +54,14 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lightbo
 const form = document.getElementById("pesan");
 const errorBox = document.getElementById("formError");
 const conditionalFields = form.querySelectorAll("[data-only]");
-const jumlahLabel = form.querySelector("[data-label-reguler]");
+const jumlahLabel = document.getElementById("jumlahLabel");
+const jemputLabel = document.getElementById("jemputLabel");
+const tujuanLabel = document.getElementById("tujuanLabel");
+const LABEL_JUMLAH = {
+  "Travel Reguler": "Jumlah kursi",
+  "Kirim Paket": "Jumlah paket",
+};
+const labelJumlah = (layanan) => LABEL_JUMLAH[layanan] || "Jumlah penumpang";
 
 // Tanggal minimal = hari ini
 const dateInput = form.elements.tanggal;
@@ -66,9 +73,11 @@ dateInput.value = toISO(today);
 // Ganti tampilan form sesuai layanan
 const syncLayanan = () => {
   const layanan = form.elements.layanan.value;
-  const reguler = layanan === "Travel Reguler";
-  conditionalFields.forEach((el) => { el.hidden = el.dataset.only !== layanan; });
-  jumlahLabel.textContent = reguler ? jumlahLabel.dataset.labelReguler : jumlahLabel.dataset.labelCarter;
+  const paket = layanan === "Kirim Paket";
+  conditionalFields.forEach((el) => { el.hidden = !el.dataset.only.split("|").includes(layanan); });
+  jumlahLabel.textContent = labelJumlah(layanan);
+  jemputLabel.textContent = paket ? "Alamat pengambilan paket" : "Alamat penjemputan";
+  tujuanLabel.textContent = paket ? "Alamat & nama penerima" : "Alamat tujuan";
 };
 form.querySelectorAll('input[name="layanan"]').forEach((r) => r.addEventListener("change", syncLayanan));
 syncLayanan();
@@ -98,19 +107,21 @@ form.addEventListener("submit", (e) => {
 
   const reguler = f.layanan.value === "Travel Reguler";
   const bandara = f.layanan.value === "Antar-Jemput Bandara";
+  const paket = f.layanan.value === "Kirim Paket";
   const baris = [
     "Halo JM Trans, saya mau pesan:",
     "",
     `*Layanan:* ${f.layanan.value}`,
-    reguler ? `*Arah:* ${f.arah.value}` : null,
+    reguler || paket ? `*Arah:* ${f.arah.value}` : null,
+    paket && f.isiPaket.value.trim() ? `*Isi paket:* ${f.isiPaket.value.trim()}` : null,
     bandara ? `*Bandara:* ${f.bandara.value} — ${f.arahBandara.value}` : null,
     bandara && f.penerbangan.value.trim() ? `*Penerbangan:* ${f.penerbangan.value.trim()}` : null,
     `*Tanggal:* ${formatTanggal(f.tanggal.value)}`,
-    `*${reguler ? "Jumlah kursi" : "Jumlah penumpang"}:* ${f.jumlah.value}`,
-    `*Nama:* ${f.nama.value.trim()}`,
+    `*${labelJumlah(f.layanan.value)}:* ${f.jumlah.value}`,
+    `*${paket ? "Nama pengirim" : "Nama"}:* ${f.nama.value.trim()}`,
     `*No. HP:* ${f.hp.value.trim()}`,
-    `*Alamat jemput:* ${f.jemput.value.trim()}`,
-    `*Alamat tujuan:* ${f.tujuan.value.trim()}`,
+    `*${paket ? "Alamat pengambilan" : "Alamat jemput"}:* ${f.jemput.value.trim()}`,
+    `*${paket ? "Alamat & nama penerima" : "Alamat tujuan"}:* ${f.tujuan.value.trim()}`,
     f.catatan.value.trim() ? `*Catatan:* ${f.catatan.value.trim()}` : null,
     "",
     "Mohon info harga dan ketersediaannya. Terima kasih.",
